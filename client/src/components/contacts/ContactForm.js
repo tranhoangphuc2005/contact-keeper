@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
   addContact,
-  useContacts,
   updateContact,
   clearCurrent
-} from '../../context/contact/ContactState';
+} from '../../context/contact/contactActions';
+import { useContacts } from '../../context/contact/ContactState';
 
 const ContactForm = () => {
   const [contactState, contactDispatch] = useContacts();
@@ -33,10 +33,10 @@ const ContactForm = () => {
 
   const { name, email, phone, type } = contact;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (current === null) {
       addContact(contactDispatch, contact);

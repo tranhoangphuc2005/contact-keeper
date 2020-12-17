@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useAuth, logout } from '../../context/auth/AuthState';
-import { useContacts, clearContacts } from '../../context/contact/ContactState';
+import { useContacts } from '../../context/contact/ContactState';
+import { clearContacts } from '../../context/contact/contactActions';
 
 const Navbar = ({ title, icon }) => {
   const [authState, authDispatch] = useAuth();

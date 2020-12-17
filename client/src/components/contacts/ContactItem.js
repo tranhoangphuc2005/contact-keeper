@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  useContacts,
   deleteContact,
   setCurrent,
   clearCurrent
-} from '../../context/contact/ContactState';
+} from '../../context/contact/contactActions';
+import { useContacts } from '../../context/contact/ContactState';
 
 const ContactItem = ({ contact }) => {
   // we just need the contact dispatch without state.
